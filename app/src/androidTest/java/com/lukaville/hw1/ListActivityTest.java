@@ -6,6 +6,7 @@ import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
 import com.lukaville.hw1.ui.ListActivity;
+import com.lukaville.hw1.util.NumberUtils;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -42,5 +43,12 @@ public class ListActivityTest {
     public void evenElementGray() {
         onView(byIndex(withId(R.id.recycler_view), 1)).check(matches(withBackgroundColor(GRAY_COLOR)));
         onView(byIndex(withId(R.id.recycler_view), 3)).check(matches(withBackgroundColor(GRAY_COLOR)));
+    }
+
+    @Test
+    public void textSet() {
+        onView(byIndex(withId(R.id.recycler_view), 0)).check(matches(withText(NumberUtils.numberToText(1))));
+        onView(byIndex(withId(R.id.recycler_view), 1)).check(matches(withText(NumberUtils.numberToText(2))));
+        onView(byIndex(withId(R.id.recycler_view), 2)).check(matches(withText(NumberUtils.numberToText(3))));
     }
 }
