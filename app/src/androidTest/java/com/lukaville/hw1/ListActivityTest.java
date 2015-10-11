@@ -34,13 +34,13 @@ public class ListActivityTest {
 
     @Test
     public void oddElementWhite() {
-        onView(byIndex(withId(R.id.recycler_view), 0)).check(matches(withBackgroundColor(GRAY_COLOR)));
+        onView(byIndex(withId(R.id.recycler_view), 0)).check(matches(withBackgroundColor(WHITE_COLOR)));
         onView(byIndex(withId(R.id.recycler_view), 2)).check(matches(withBackgroundColor(WHITE_COLOR)));
     }
 
     @Test
     public void evenElementGray() {
-        onView(byIndex(withId(R.id.recycler_view), 1)).check(matches(withBackgroundColor(WHITE_COLOR)));
+        onView(byIndex(withId(R.id.recycler_view), 1)).check(matches(withBackgroundColor(GRAY_COLOR)));
         onView(byIndex(withId(R.id.recycler_view), 3)).check(matches(withBackgroundColor(GRAY_COLOR)));
     }
 }
