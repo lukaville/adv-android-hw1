@@ -26,27 +26,21 @@ import static com.lukaville.hw1.Util.withBackgroundColor;
 @LargeTest
 public class ListActivityTest {
 
+    public static final int WHITE_COLOR = Color.parseColor("#ffffff");
+    public static final int GRAY_COLOR = Color.parseColor("#aaaaaa");
+
     @Rule
     public ActivityTestRule<ListActivity> mActivityRule = new ActivityTestRule<>(ListActivity.class);
 
     @Test
     public void oddElementWhite() {
-        onView(byIndex(withId(R.id.recycler_view), 0)).check(matches(withBackgroundColor(
-                Color.parseColor("#ffffff")
-        )));
-
-        onView(byIndex(withId(R.id.recycler_view), 2)).check(matches(withBackgroundColor(
-                Color.parseColor("#ffffff")
-        )));
+        onView(byIndex(withId(R.id.recycler_view), 0)).check(matches(withBackgroundColor(GRAY_COLOR)));
+        onView(byIndex(withId(R.id.recycler_view), 2)).check(matches(withBackgroundColor(WHITE_COLOR)));
     }
 
     @Test
     public void evenElementGray() {
-        onView(byIndex(withId(R.id.recycler_view), 1)).check(matches(withBackgroundColor(
-                Color.parseColor("#aaaaaa")
-        )));
-        onView(byIndex(withId(R.id.recycler_view), 3)).check(matches(withBackgroundColor(
-                Color.parseColor("#aaaaaa")
-        )));
+        onView(byIndex(withId(R.id.recycler_view), 1)).check(matches(withBackgroundColor(WHITE_COLOR)));
+        onView(byIndex(withId(R.id.recycler_view), 3)).check(matches(withBackgroundColor(GRAY_COLOR)));
     }
 }
