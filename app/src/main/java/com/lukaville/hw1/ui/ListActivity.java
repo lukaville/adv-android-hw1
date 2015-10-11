@@ -1,14 +1,14 @@
 package com.lukaville.hw1.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.lukaville.hw1.R;
 import com.lukaville.hw1.adapter.TextIndexAdapter;
 
-public class ListActivity extends Activity {
+public class ListActivity extends AppCompatActivity {
     private static final int ITEM_NUMBER = 1000;
 
     @Override
