@@ -16,13 +16,15 @@ public class SplashScreenFragment extends Fragment {
     private static final int SPLASH_SCREEN_DURATION_SECONDS = 2;
 
     private OnSplashScreenEndListener mListener;
+    private SleepTask mSleepTask;
 
     public SplashScreenFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new SleepTask().execute();
+        mSleepTask = new SleepTask();
+        mSleepTask.execute();
     }
 
     @Override
@@ -65,6 +67,12 @@ public class SplashScreenFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mSleepTask.cancel(true);
     }
 
     public interface OnSplashScreenEndListener {
