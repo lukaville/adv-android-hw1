@@ -1,5 +1,6 @@
 package com.lukaville.hw1.adapter;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +29,14 @@ public class TextIndexAdapter extends RecyclerView.Adapter<TextIndexAdapter.Item
 
     @Override
     public void onBindViewHolder(ItemHolder holder, int position) {
-        holder.mTextView.setText(NumberUtils.numberToText(position + 1));
+        int number = position + 1;
+
+        NumberUtils.numberToText(1001);
+        holder.mTextView.setText(NumberUtils.numberToText(number));
+        int backgroundColorResource = number % 2 == 0 ? R.color.gray : R.color.white;
+        int backgroundColor = ContextCompat.getColor(holder.itemView.getContext(), backgroundColorResource);
+
+        holder.itemView.setBackgroundColor(backgroundColor);
     }
 
     @Override

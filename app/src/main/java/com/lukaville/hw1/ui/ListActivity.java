@@ -25,12 +25,5 @@ public class ListActivity extends AppCompatActivity {
         // Create and set linear layout manager
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-
-        // Set stripe item decoration
-        RecyclerView.ItemDecoration decoration = new StripeBackgroundDecoration(
-                R.color.white,
-                R.color.gray
-        );
-        recyclerView.addItemDecoration(decoration);
     }
 }
